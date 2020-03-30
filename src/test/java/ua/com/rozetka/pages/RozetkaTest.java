@@ -10,15 +10,14 @@ import org.testng.annotations.Test;
 import ua.com.rozetka.data.RozetkaData;
 
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertNotEquals;
 
 @Listeners(ua.com.rozetka.utils.ListenerTest.class)
 public class RozetkaTest {
 
-    protected WebDriver driver;
-    LoginPage loginPage;
-    SearchPage searchPage;
-    CheckoutPage checkoutPage;
+    private WebDriver driver;
+    private LoginPage loginPage;
+    private SearchPage searchPage;
+    private CheckoutPage checkoutPage;
 
     @BeforeClass(alwaysRun = true)
     public void setUp() {
@@ -50,8 +49,8 @@ public class RozetkaTest {
         checkoutPage.deleteItemFromCard(status);
     }
 
-    /*@AfterClass(alwaysRun = true)
+    @AfterClass(alwaysRun = true)
     public void tearDown() {
         driver.quit();
-    }*/
+    }
 }

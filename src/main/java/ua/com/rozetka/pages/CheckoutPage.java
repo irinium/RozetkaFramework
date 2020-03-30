@@ -28,7 +28,7 @@ public class CheckoutPage extends AbstractPage {
 
     public CheckoutPage(WebDriver driver) {
         super(driver);
-        this.PAGE_TITLE = "ROZETKA — Новый покупатель | Оформление заказа";
+        this.PAGE_TITLE = "ROZETKA— Авторизованный пользователь | Оформление заказа";
         this.PAGE_URL = "https://my.rozetka.com.ua/checkout/#step=delivery";
     }
 
