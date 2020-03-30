@@ -6,15 +6,15 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class SearchPage extends GenericPage {
+public class SearchPage extends AbstractPage {
 
     @FindBy(css = ".search-form__input.ng-pristine")
     private WebElement searchInput;
 
-    @FindBy(css = ".product-trade .buy-button")
+    @FindBy(css = "app-buy-button.toOrder:nth-child(1) > button:nth-child(1)")
     private WebElement buyButton;
 
-    @FindBy(css = ".cart-modal__check-button .button-inner")
+    @FindBy(css = ".cart-modal__check-button > span:nth-child(1)")
     private WebElement orderConfirmButton;
 
     @FindBy(css = ".catalog-grid > li .goods-tile__title")
@@ -37,7 +37,7 @@ public class SearchPage extends GenericPage {
                 .orElseThrow(() -> new RuntimeException("Result with [" + text + "] not found"));
         scrollToElement(item);
         clickElement(item);
-        clickElement(buyButton);
+        scrollAndClickElement(buyButton);
         scrollAndClickElement(orderConfirmButton);
     }
 }

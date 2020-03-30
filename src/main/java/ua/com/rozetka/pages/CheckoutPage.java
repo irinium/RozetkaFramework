@@ -6,26 +6,29 @@ import org.openqa.selenium.support.FindBy;
 
 import static org.testng.Assert.assertTrue;
 
-public class CheckoutPage extends GenericPage {
+public class CheckoutPage extends AbstractPage {
     
-    @FindBy(css = "#total_block .check-edit-order-link")
+    @FindBy(css = ".check-edit-order a")
     private WebElement editOrder;
 
-    @FindBy(css = ".cart-check-wrap")
+    @FindBy(css = ".cart-check")
     private WebElement deleteItem;
 
-    @FindBy(css = ".cart-i-delete a")
+    @FindBy(css = ".cart-i-delete-link")
     private WebElement confirmDelete;
 
     @FindBy(css = ".preloader-big")
     private WebElement loader;
 
-    @FindBy(css = ".cart-modal__inner .cart-modal__dummy")
+    @FindBy(css = ".empty-cart-title")
     private WebElement cardStatus;
+
+    @FindBy(css = ".hub-i-cart-link")
+    private WebElement card;
 
     public CheckoutPage(WebDriver driver) {
         super(driver);
-        this.PAGE_TITLE = "ROZETKA— Авторизованный пользователь | Оформление заказа";
+        this.PAGE_TITLE = "ROZETKA — Новый покупатель | Оформление заказа";
         this.PAGE_URL = "https://my.rozetka.com.ua/checkout/#step=delivery";
     }
 
@@ -34,6 +37,7 @@ public class CheckoutPage extends GenericPage {
         clickElement(editOrder);
         clickElement(deleteItem);
         clickElement(confirmDelete);
+        clickElement(card);
         assertTrue(getText(cardStatus).trim().contains(item));
     }
 }
