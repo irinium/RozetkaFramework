@@ -68,11 +68,6 @@ public abstract class AbstractPage {
         return wait.until(ExpectedConditions.visibilityOfAllElements(elements));
     }
 
-    public void selectDropdown(WebElement element, String value) {
-        Select select = new Select(element);
-        select.selectByValue(value);
-    }
-
     public void scrollToElement(WebElement element) {
         jsExecutor.executeScript("arguments[0].scrollIntoView(false);", element);
     }
