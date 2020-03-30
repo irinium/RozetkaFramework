@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class SearchPage extends GenericPage {
+public class SearchPage extends AbstractPage {
 
     @FindBy(css = ".search-form__input.ng-pristine")
     private WebElement searchInput;
@@ -37,7 +37,7 @@ public class SearchPage extends GenericPage {
                 .orElseThrow(() -> new RuntimeException("Result with [" + text + "] not found"));
         scrollToElement(item);
         clickElement(item);
-        clickElement(buyButton);
+        scrollAndClickElement(buyButton);
         scrollAndClickElement(orderConfirmButton);
     }
 }

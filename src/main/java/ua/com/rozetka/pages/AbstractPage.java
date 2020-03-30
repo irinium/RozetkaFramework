@@ -12,14 +12,14 @@ import java.util.List;
 
 import static org.testng.Assert.*;
 
-public class GenericPage {
+public abstract class AbstractPage {
     public WebDriver driver;
     public WebDriverWait wait;
     public String PAGE_URL;
     public String PAGE_TITLE;
     protected JavascriptExecutor jsExecutor;
 
-    public GenericPage(WebDriver driver) {
+    public AbstractPage(WebDriver driver) {
         this.driver = driver;
         jsExecutor = ((JavascriptExecutor) driver);
         wait = new WebDriverWait(driver, 10);

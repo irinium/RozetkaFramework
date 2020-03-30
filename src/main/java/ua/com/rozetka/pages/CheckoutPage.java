@@ -6,9 +6,9 @@ import org.openqa.selenium.support.FindBy;
 
 import static org.testng.Assert.assertTrue;
 
-public class CheckoutPage extends GenericPage {
+public class CheckoutPage extends AbstractPage {
     
-    @FindBy(css = "#total_block .check-edit-order-link")
+    @FindBy(css = ".check-edit-order a")
     private WebElement editOrder;
 
     @FindBy(css = ".cart-check-wrap")
@@ -20,12 +20,12 @@ public class CheckoutPage extends GenericPage {
     @FindBy(css = ".preloader-big")
     private WebElement loader;
 
-    @FindBy(css = ".cart-modal__inner .cart-modal__dummy")
+    @FindBy(css = ".cart-modal__dummy")
     private WebElement cardStatus;
 
     public CheckoutPage(WebDriver driver) {
         super(driver);
-        this.PAGE_TITLE = "ROZETKA— Авторизованный пользователь | Оформление заказа";
+        this.PAGE_TITLE = "ROZETKA — Новый покупатель | Оформление заказа";
         this.PAGE_URL = "https://my.rozetka.com.ua/checkout/#step=delivery";
     }
 

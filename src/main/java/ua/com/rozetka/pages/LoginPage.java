@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class LoginPage extends GenericPage {
+public class LoginPage extends AbstractPage {
 
     @FindBy(css = "div:nth-child(1) > .input-text.auth-input-text")
     private WebElement emailInput;
